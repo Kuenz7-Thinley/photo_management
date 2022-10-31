@@ -1,0 +1,28 @@
+body
+  #js-top-index.container
+    .card-body
+      - if current_user.present?
+        = link_to 'ログアウトする', user_sign_out_path, method: :delete
+      h1.mb-4
+        | 写真一覧
+      div
+        = link_to 'MyTweetAppと承認', @login_url
+      .mt-3
+        = link_to '写真アップロード', new_post_path
+      .mt-4
+        - if @posts.present?
+          - @posts.each do | item |
+            .gallery
+              .desc = item.title
+              - if item.image.attached?
+                = image_tag url_for(item.image), :alt => ''
+              - if session[:unifa_token].present?
+                .desc-btn
+                  button [
+                    type="button"
+                    id="js-tweet-btn-#{item.id}"
+                    data-auth=session[:unifa_token]
+                    data-title=item.title
+                    data-url=url_for(item.image)
+                  ]
+                    | ツイートする

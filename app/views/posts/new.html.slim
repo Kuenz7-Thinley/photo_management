@@ -1,0 +1,18 @@
+body
+  .container
+    .card-body
+      - if current_user.present?
+        = link_to 'ログアウトする', user_sign_out_path, method: :delete
+      h1.mb-4
+        | 写真アップロード
+      = form_for @post, :url => posts_path,
+            html: { class: 'form p-3', novalidate: true } do |f|
+        div
+          | タイトル
+          = f.text_field :title, :class => 'form-control ms-2', placeholder: 'タイトル', type: 'text'
+        .mt-2
+          | 画像ファイル
+          = f.file_field :image, :class => 'ms-2', multiple: false, accept:'image/*'
+        .d-flex.mt-2
+          = f.submit 'アップロード', class: 'btn btn-primary px-4'
+          = link_to 'キャンセル', root_path, { class: 'ms-3' }

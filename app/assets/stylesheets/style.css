@@ -1,0 +1,163 @@
+.alert-text {
+  color: #dc3545;
+}
+
+.row {
+  --cui-gutter-x: 1.5rem;
+  --cui-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--cui-gutter-y));
+  margin-right: calc(-.5 * var(--cui-gutter-x));
+  margin-left: calc(-.5 * var(--cui-gutter-x)); }
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--cui-gutter-x) * .5);
+    padding-left: calc(var(--cui-gutter-x) * .5);
+    margin-top: var(--cui-gutter-y); }
+
+.col {
+  flex: 1 0 0%; }
+
+  .col-auto {
+    flex: 0 0 auto;
+    width: auto; }
+  
+  .col-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%; }
+  
+  .col-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%; }
+  
+  .col-3 {
+    flex: 0 0 auto;
+    width: 25%; }
+  
+  .col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%; }
+  
+  .col-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%; }
+  
+  .col-6 {
+    flex: 0 0 auto;
+    width: 50%; }
+  
+  .col-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%; }
+  
+  .col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%; }
+  
+  .col-9 {
+    flex: 0 0 auto;
+    width: 75%; }
+  
+  .col-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%; }
+  
+  .col-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%; }
+  
+  .col-12 {
+    flex: 0 0 auto;
+    width: 100%; }
+
+.d-inline {
+  display: inline !important; }
+
+.d-inline-block {
+  display: inline-block !important; }
+
+.d-block {
+  display: block !important; }
+
+.d-grid {
+  display: grid !important; }
+
+.d-table {
+  display: table !important; }
+
+.d-table-row {
+  display: table-row !important; }
+
+.d-table-cell {
+  display: table-cell !important; }
+
+.d-flex {
+  display: flex !important; }
+
+.d-inline-flex {
+  display: inline-flex !important; }
+
+.d-none {
+  display: none !important; }
+
+.mt-1 {
+  margin-top: 0.25rem !important; }
+
+.mt-2 {
+  margin-top: 0.5rem !important; }
+
+.mt-3 {
+  margin-top: 1rem !important; }
+
+.mt-4 {
+  margin-top: 1.5rem !important; }
+
+.mt-5 {
+  margin-top: 3rem !important; }
+
+.ms-1 {
+  margin-left: 0.25rem !important; }
+
+.ms-2 {
+  margin-left: 0.5rem !important; }
+
+.ms-3 {
+  margin-left: 1rem !important; }
+
+.ms-4 {
+  margin-left: 1.5rem !important; }
+
+.ms-5 {
+  margin-left: 3rem !important; }
+
+
+.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  height: 300px;
+}
+  
+.gallery:hover {
+  border: 1px solid #777;
+}
+
+.gallery img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.desc-btn {
+  padding: 15px;
+  text-align: center;
+}

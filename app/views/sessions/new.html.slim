@@ -1,0 +1,20 @@
+body
+  #login.min-vh-100.d-flex.flex-row.align-items-center
+    .container
+      .card-body
+        = form_for(:session, url: user_sign_in_path, html: { class: 'form' }) do |f|
+          h1.mb-4
+            | ログイン
+          div
+            | ユーザーID
+          .input-group.mb-3
+            = f.text_field :username, :class => 'form-control', autofocus: true, autocomplete: 'email', placeholder: 'Username', type: 'text'
+          .mt-2
+            | パスワード
+          .input-group.mb-4
+            = f.password_field :password, :class => 'form-control', autocomplete: 'current-password', placeholder: 'Password'
+          - if flash[:alert].present?
+            .mb-3.alert-text= flash[:alert]
+          .row.mt-3
+            .col-lg-6.text-end
+              = f.submit 'ログインする', class: 'btn btn-primary px-4'
