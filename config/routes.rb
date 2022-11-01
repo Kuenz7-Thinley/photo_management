@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   delete 'user/sign_out'  => 'sessions#destroy'
 
   # 写真
-  resources :posts
+  resources :posts do
+    collection do
+      post 'tweet' => 'posts#tweet'
+    end
+  end
 
   # oauth
   resources :oauth do

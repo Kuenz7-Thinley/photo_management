@@ -20,12 +20,6 @@ module AuthHelper
   # トークンエンドポイント
   TOKEN_URL = '/oauth/token'
 
-  # APIアクセスのスコープ設定 read/write権限
-  SCOPES = ['k:app_record:read','k:app_record:write']
-
-  # CSRF対策のランダムな値
-  STATE = SecureRandom.alphanumeric
-
   # ログインURLの生成
   def get_login_url
     client = OAuth2::Client.new(CLIENT_ID,
