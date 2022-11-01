@@ -18,11 +18,7 @@ body
                 = image_tag url_for(item.image), :alt => ''
               - if session[:unifa_token].present?
                 .desc-btn
-                  button [
-                    type="button"
-                    id="js-tweet-btn-#{item.id}"
-                    data-auth=session[:unifa_token]
-                    data-title=item.title
-                    data-url=url_for(item.image)
-                  ]
-                    | ツイートする
+                  = button_to 'ツイートする',
+                  tweet_posts_path,
+                  method: :post,
+                  params: { text: item.title, url: url_for(item.image) }

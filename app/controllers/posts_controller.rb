@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  include TweetHelper
 
   def new
     @post = Post.new
@@ -14,6 +15,17 @@ class PostsController < ApplicationController
     rescue StandardError => e
       Rails.logger.warn e.inspect
       render :new
+      flash[:alert] = 'エラーが発生しました'
+      raise ActiveRecord::Rollback
+    end
+  end
+
+  def tweet
+    ActiveRecord::Base.transaction do
+      post_tweet
+    rescue StandardError => e
+      Rails.logger.warn e.inspect
+      # render :new
       flash[:alert] = 'エラーが発生しました'
       raise ActiveRecord::Rollback
     end
