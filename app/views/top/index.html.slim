@@ -21,4 +21,4 @@ body
                   = button_to 'ツイートする',
                   tweet_posts_path,
                   method: :post,
-                  params: { text: item.title, url: url_for(item.image) }
+                  params: { text: item.title, url: item.image.attached? ?url_for(item.image) : '' }

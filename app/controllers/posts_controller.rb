@@ -6,20 +6,27 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # 新規画像作成
   def create
     ActiveRecord::Base.transaction do
       post = Post.new(post_params)
-      post.save!
+      post.save
 
-      redirect_to root_path
+      if post.errors.any?
+        flash[:alert] = post.errors
+        redirect_to new_post_path
+      else
+        redirect_to root_path
+      end
     rescue StandardError => e
       Rails.logger.warn e.inspect
-      render :new
+      redirect_to new_post_path
       flash[:alert] = 'エラーが発生しました'
       raise ActiveRecord::Rollback
     end
   end
 
+  # 外部URLへツイートする
   def tweet
     ActiveRecord::Base.transaction do
       post_tweet

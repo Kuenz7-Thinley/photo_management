@@ -16,3 +16,9 @@ body
         .d-flex.mt-2
           = f.submit 'アップロード', class: 'btn btn-primary px-4'
           = link_to 'キャンセル', root_path, { class: 'ms-3' }
+        - if flash[:alert].present?
+          .mb-3.alert-text
+            ul
+            - flash[:alert].each do |item|
+              li
+                = item.last.first

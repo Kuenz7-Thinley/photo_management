@@ -26,7 +26,7 @@ module TweetHelper
     
     req.body = data
     res = http.request(req)
-    
+
     puts res.code, res.msg, res.body
   end
 end
