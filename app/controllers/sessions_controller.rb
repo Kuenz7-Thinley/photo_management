@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
 
+  # ログイン
   def create
     ActiveRecord::Base.transaction do
       user = User.find_by(username: user_params[:username])
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # ログアウト
   def destroy
     ActiveRecord::Base.transaction do
       session[:user_id] = nil

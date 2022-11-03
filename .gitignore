@@ -136,6 +136,7 @@ bower.json
 /public/font
 /public/assets
 /public/images
+/public/packs
 
 # Ignore yarn files
 /yarn-error.log
